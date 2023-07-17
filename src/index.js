@@ -8,7 +8,7 @@ const loader = document.querySelector('.loader')
 select.addEventListener('change', getCatData);
 
 function getCatData(event) {
-   loader.style.display = 'none';
+   loader.style.display = 'block';
     const catId = event.target.value;
        fetchCatByBreed(catId).then((data) => {
         const img = data.url;
@@ -33,6 +33,7 @@ fetchBreeds().then(cats => {
     cats.map(cat => {
         const option = `<option value = "${cat.id}">${cat.name}</option>`
         select.insertAdjacentHTML("beforeend", option);
+        loader.style.display = 'none';
    })
 }).catch(() => {
     error.style.display = 'block'
