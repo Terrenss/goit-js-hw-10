@@ -14,7 +14,8 @@ function getCatData(event) {
         const img = data.url;
         const description = data.breeds[0].description;
         const name = data.breeds[0].name;
-        const temperament = data.breeds[0].temperament;
+           const temperament = data.breeds[0].temperament;
+           loader.style.display = 'none';
         catInfo.innerHTML = 
             `<img src="${img}" alt="cat foto" width=300  />
         <div class="info">
