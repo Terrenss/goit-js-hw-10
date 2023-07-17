@@ -8,7 +8,8 @@ const loader = document.querySelector('.loader')
 select.addEventListener('change', getCatData);
 
 function getCatData(event) {
-   loader.style.display = 'block';
+    loader.style.display = 'block';
+    catInfo.innerHTML = "";
     const catId = event.target.value;
        fetchCatByBreed(catId).then((data) => {
         const img = data.url;
